@@ -23,6 +23,8 @@
 // Bonus: Loop through the second inner array! Print out the first item, the second item, then the third item
 
 function func_WorkingwithArrays() {
+    console.clear();
+
     const rainbowColors = [];
     rainbowColors.push("orange");
     console.log(rainbowColors);
@@ -65,8 +67,14 @@ function func_WorkingwithArrays() {
 // Bonus: Change it to log "My 1st choice", "My 2nd choice", "My 3rd choice", picking the right suffix for the number based on what it is.
 
 function func_YourTopChoices() {
+    console.clear();
     const favoriteColors = ["white", "black", "silver", "gold", "blue", "purple", "yellow", "red"];
-    favoriteColors.forEach((e, index) => {console.log(`My #${index+1}. choice is ${e}`)})
+    favoriteColors.forEach((e, index) => {console.log(`My #${index+1} choice is ${e}`)})
+    func_YourTopChoices2(favoriteColors);
+}
+function func_YourTopChoices2(favoriteColors) {
+    
+    favoriteColors.forEach((e, index) => {console.log(`My ${index+1}${(index+1 == 1) ? `st` : (index+1 == 2)? `nd` : (index+1 == 3)? `rd` : `th`}  choice is ${e}`)})
 }
 
 
@@ -83,6 +91,7 @@ function func_YourTopChoices() {
 // If you have read it, log a string like 'You have already read "Sapiens", by Yuval Noah Harari'
 // If not, log a string like 'You still need to read "A Life on Our Planet", by David Attenborough.'"
 function func_TheReadingList() {
+    console.clear();
     let bookList = [
         {title: "Book 1", author: "aa", alreadyRead: true},
         {title: "Book 2", author: "bb", alreadyRead: true},
@@ -125,6 +134,7 @@ function func_TheReadingList() {
 // - 6 ice cubes
 // Note: That is actually a very nice smoothie
 function func_TheRecipeCard() {
+    console.clear();
     let recipe = {
         title : "Ginger, Apple and Banana Smoothie",
         numOfServings : 2,
@@ -143,6 +153,7 @@ function func_TheRecipeCard() {
 // Print out the movie information like so: "'The Life Aquatic' lasts for 118 minutes, and was directed by Wes Anderson. Stars: Bill Murray, Cate Blanchett, Anjelica Huston, Jeff Goldblum and Willem Dafoe."
 // Maybe the join method will be helpful
 function func_TheMovieDatabase() {
+    console.clear();
     let movieList = [
         {title: "The Life Aquatic", duration: 118, director: "Wes Anderson", stars: ["Bill Murray", "Cate Blanchett", "Anjelica Huston", "Jeff Goldblum and Willem Dafoe"]},
         {title: "Movie 2", duration: 95, director: "Director 2, Director 1", stars: ["H", "B"]},
@@ -163,6 +174,7 @@ function func_TheMovieDatabase() {
 // If the received age is equal to or over 16, print "Drive away!"
 // Bonus: If the user can't drive yet, tell them how many years they will have to wait (e.g. "Sorry, you have 4 years to wait until you can drive")
 function func_DrivingAge() {
+    console.clear();
     canDrive(parseInt(prompt("Age?")));
 }
 function canDrive(age) {
@@ -177,6 +189,7 @@ function canDrive(age) {
 // The World Translator
 // Write a function called translator that receives a language (e.g. "fr", "eng" etc.). Log out the translated version (e.g. if the language is "eng" - log "Hello World", if the language is "fr" - log "Bonjour le monde" etc.)
 function func_TheWorldTranslator() {
+    console.clear();
     const lang = [
         { language: "English", word: "Hello World" },
         { language: "Malay"  , word: "Hai dunia" },
@@ -207,6 +220,7 @@ function func_TheWorldTranslator() {
 // Call the function three times with different sets of values.
 // Bonus: Figure out how to get the current year in JavaScript instead of passing it in.
 function func_TheAgeCalculator() {
+    console.clear();
     calculateAge(parseInt(prompt("Your DOB Year?")), parseInt(prompt("Current Year?")));
 }
 function calculateAge(dobYear, curYear) {
@@ -229,10 +243,10 @@ function calculateAge(dobYear, curYear) {
 // Call that function three times, passing in different values each time.
 // Bonus: Accept floating point values for amountPerDay, and round the result to a round number.
 function func_TheLifetimeSupplyCalculator() {
+    console.clear();
     calculateSupply(23, 3);
     calculateSupply(50, 3);
     calculateSupply(50, 2.5);
-    
 }
 function calculateSupply(age, amountPerDay) {
     const maxAge = 90;
@@ -254,6 +268,7 @@ function calculateSupply(age, amountPerDay) {
 // Pass the radius to the function.
 // Calculate the area based on the radius, and output "The area is NN".
 function func_TheGeometrizer() {
+    console.clear();
     console.log(calcCircumference(3));
     console.log(calcArea(3));
 }
@@ -284,6 +299,39 @@ function calcArea(radius) {
 
 // Now store a fahrenheit temperature into a variable.
 // Convert it to celsius and output "NN°F is NN°C".
+
+
+function func_TheTemperatureConverter() {
+    console.clear();
+    const iTemperature = prompt("Input temperature in celcius");
+    if (iTemperature === null || iTemperature === "") {
+        alert("No temperature is inputted. Please re-enter.")
+    }
+    else {
+        var c = new convertTemperature(parseInt(iTemperature));
+        var msg = "The Temperature Converter :-\n\n";
+        msg = msg + "Temperature in celsius : " + parseInt(iTemperature).toString() + "\n";
+        msg = msg + parseInt(iTemperature).toString() + "°C is " + c.convertFahrenheit().toFixed(2).toString() + "°F\n";
+        msg = msg + parseInt(iTemperature).toString() + "°F is " + c.convertCelsius().toFixed(2).toString() + "°C\n";
+        console.log(msg);
+    }
+}
+
+function convertTemperature(temperatureInfo)
+{
+    this.temperatureInfo = temperatureInfo;
+    // fahrenheit method
+    this.convertFahrenheit = function ()
+    {
+        return temperatureInfo * 9 / 5 + 32;
+    }
+
+    // celsius method
+    this.convertCelsius = function ()
+    {
+        return (temperatureInfo - 32) * 5 / 9;
+    }
+}
 
 
 
@@ -328,6 +376,110 @@ function calcArea(radius) {
 // Add a few extra users and make a search function. I'll let you decide on the interface or the function signature
 
 
+function func_WorkingwithUsers () {
+    var c = new userProfile();
+    //console.log(c.validateAccount());
+    //console.log(c.createAccount("chico@gmail.com", "redLippedBatfish", false));
+    //console.log(c.deleteAccount("zeppo@ga.co"));
+    //console.log(c.updateAccount1("harpo@ga.co", "password", "ayeAye"));
+    //console.log(c.updateAccount2("harpo@ga.co", { password: "gharial", isAdmin: false }));
+    console.log(c.updateAccount3("harpo@ga.co", "elephant", { password: "gharial", isAdmin: false }));
+}
+
+function userProfile()
+{
+
+    const users = [
+        {email: "groucho@ga.co", password: "chicken", isAdmin: true},
+        {email: "harpo@ga.co", password: "elephant", isAdmin: false},
+        {email: "gummo@ga.co", password: "pinkFairyArmadillo", isAdmin: true},
+        {email: "zeppo@ga.co", password: "dumboOctopus", isAdmin: false}
+    ];
+
+
+
+    // validation
+    var bProceed = true;
+    var result = "";
+    this.validateAccount = function ()
+    {
+
+        userEmail = prompt("Please enter an email");
+        result = "Sorry, something went wrong";
+        users.forEach(e => {
+            if (bProceed && e.email == userEmail) {
+                bProceed = false;
+                result = "You are logged in";
+            }
+        })
+
+        return result;
+    }
+
+
+    // create
+    this.createAccount = function (userEmail, userPassword, userIsAdmin)
+    {
+        users.push({email: userEmail, password: userPassword, isAdmin: userIsAdmin});
+        return users;
+    }
+
+    // update
+    this.deleteAccount = function (userEmail)
+    {
+        let x = 0;
+        users.forEach((e, index) => {
+            if (bProceed && e.email == userEmail) {
+                bProceed = false;
+                x = index;
+            }
+        })
+        users.splice(x, 1);
+        return users;
+    }
+
+    // update
+    this.updateAccount1 = function (userEmail, fieldName, NewFieldValue)
+    {
+        let obj = users.find(e => e.email == userEmail);
+        for (const property in obj) {
+            if (property == fieldName) {
+                obj[property] = NewFieldValue;
+            }
+        }
+        return users;
+    }
+
+    this.updateAccount2 = function (userEmail, arrUserInfo)
+    {
+        let obj = users.find(e => e.email == userEmail);
+        let obj2 = arrUserInfo;
+        for (const property in obj) {
+            for (const property2 in obj2) {
+                if (property == property2) {
+                    obj[property] = obj2[property2];
+                }
+            }
+        }
+        return users;
+    }
+
+    this.updateAccount3 = function (userEmail, userPassword, arrUserInfo)
+    {
+        let obj = users.find(e => e.email == userEmail && e.password == userPassword);
+        let obj2 = arrUserInfo;
+        for (const property in obj) {
+            for (const property2 in obj2) {
+                if (property == property2) {
+                    obj[property] = obj2[property2];
+                }
+            }
+        }
+        return users;
+    }
+
+}
+
 
 
 
@@ -359,6 +511,47 @@ function calcArea(radius) {
 // Ask me questions about this if you want though!
 // Work together as well - even if it is just in the planning stages
 
+
+function transitApplication() {
+    
+    const stations = ["Museum", "St. James", "Circular Quay", "Wynyard", "Townhall", "Central", "Redfern", "Macdonaldtown", "Newtown"];
+
+    this.travelFrom1 = function (startStation, endStation)
+    {
+        var msg = "";
+        const stationInfo = [];
+        var bProceed = false;
+        let obj1 = stations.find(e => e == startStation);
+        let obj2 = stations.find(e => e == endStation);
+
+        if (obj1 == null || obj2 == null) {
+            msg = (obj1 == null? `${startStation} is not exist` : "")
+            msg += (obj2 == null? `${(msg != ""? `\n` : ``)}${endStation} is not exist` : "")
+        }
+        else {
+            stations.forEach((e) => {
+                if (e.toUpperCase() == startStation.toUpperCase()) { bProceed = true; }
+                else if (e.toUpperCase() == endStation.toUpperCase()) { stationInfo.push(e); bProceed = false; }
+                else { bProceed = bProceed; }
+                if (bProceed) stationInfo.push(e); 
+              });
+    
+            msg = `To go from '${startStation}' to '${endStation}' - you'll need to go through ${stationInfo.length - 2} stops\n`
+            stationInfo.forEach((e, idx) => msg += `${idx != 0 && idx < stationInfo.length? ` ` : ``}- ${e}`)
+        }
+
+        return msg;
+    }
+
+
+}
+
+function func_ATransitApplication() {
+    var c = new transitApplication();
+    console.log(c.travelFrom1("", "Central"));
+    console.log(c.travelFrom1("Circular Quay", "Test2"));
+    console.log(c.travelFrom1("Test2", "Central"));
+}
 
 
 
