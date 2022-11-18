@@ -78,7 +78,6 @@ function func_YourTopChoices2(favoriteColors) {
 }
 
 
-
 // Exercises #2: Objects
 // #2(a)
 // The Reading List
@@ -283,10 +282,6 @@ function calcArea(radius) {
 
 
 
-
-
-
-
 // #3(f)
 // The Temperature Converter
 // It's hot out! Let's make a converter based on the steps here.
@@ -299,7 +294,6 @@ function calcArea(radius) {
 
 // Now store a fahrenheit temperature into a variable.
 // Convert it to celsius and output "NN°F is NN°C".
-
 
 function func_TheTemperatureConverter() {
     console.clear();
@@ -375,14 +369,14 @@ function convertTemperature(temperatureInfo)
 // Bonus: Make this work only if the current password was also provided as a parameter. e.g. updateAccount("harpo@ga.co", "elephant", { password: "gharial", isAdmin: true });
 // Add a few extra users and make a search function. I'll let you decide on the interface or the function signature
 
-
 function func_WorkingwithUsers () {
     var c = new userProfile();
-    //console.log(c.validateAccount());
-    //console.log(c.createAccount("chico@gmail.com", "redLippedBatfish", false));
-    //console.log(c.deleteAccount("zeppo@ga.co"));
-    //console.log(c.updateAccount1("harpo@ga.co", "password", "ayeAye"));
-    //console.log(c.updateAccount2("harpo@ga.co", { password: "gharial", isAdmin: false }));
+    console.clear();
+    console.log(c.validateAccount());
+    console.log(c.createAccount("chico@gmail.com", "redLippedBatfish", false));
+    console.log(c.deleteAccount("zeppo@ga.co"));
+    console.log(c.updateAccount1("harpo@ga.co", "password", "ayeAye"));
+    console.log(c.updateAccount2("harpo@ga.co", { password: "gharial", isAdmin: false }));
     console.log(c.updateAccount3("harpo@ga.co", "elephant", { password: "gharial", isAdmin: false }));
 }
 
@@ -481,9 +475,6 @@ function userProfile()
 }
 
 
-
-
-
 // #3(h)
 // A Transit Application
 // Start with this data...
@@ -510,7 +501,6 @@ function userProfile()
 // Note that if you want to use a variable to decide which line to access - dot notation won't work on an object! You'll have to think of another way (think square brackets!)
 // Ask me questions about this if you want though!
 // Work together as well - even if it is just in the planning stages
-
 
 function transitApplication() {
     
@@ -549,9 +539,8 @@ function transitApplication() {
 function func_ATransitApplication() {
     var c = new transitApplication();
     console.log(c.travelFrom1("", "Central"));
-    console.log(c.travelFrom1("Circular Quay", "Test2"));
-    console.log(c.travelFrom1("Test2", "Central"));
+    console.log(c.travelFrom1("Circular Quay", "Central"));
+    console.log(c.travelFrom1("Circular Quay", "Central"));
 }
-
 
 

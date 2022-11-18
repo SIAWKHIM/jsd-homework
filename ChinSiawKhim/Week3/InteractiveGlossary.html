@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+
+    <h1>Interactive Glossary</h1>
+
+    <label>Search on Term : 
+        <input type="text" id="searchTerm">
+    </label>
+    <br/><br/>
+
+    <label>
+        Selection of Class :
+        <select class="classSelection" id="searchClass" name="classSelection">
+            <option value="99">&nbsp;</option>
+            <option value="0">00</option>
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+        </select>
+    </label>
+    <br/><br/>
+    
+    <fieldset>
+        <legend>Choose your tag</legend>
+        <input type="checkbox" class="tagList" name="tagList" id="General" value="General" /><label>General</label>
+        <input type="checkbox" class="tagList" name="tagList" id="Git" value="Git" /><label>Git</label>
+        <input type="checkbox" class="tagList" name="tagList" id="GitHub" value="GitHub" /><label>GitHub</label>
+        <input type="checkbox" class="tagList" name="tagList" id="Node" value="Node" /><label>Node</label>
+        <input type="checkbox" class="tagList" name="tagList" id="Internet" value="Internet" /><label>Internet</label>
+        <input type="checkbox" class="tagList" name="tagList" id="Protocol" value="Protocol" /><label>Protocol</label>
+        <input type="checkbox" class="tagList" name="tagList" id="HTTP" value="HTTP" /><label>HTTP</label>
+        <input type="checkbox" class="tagList" name="tagList" id="Front-End" value="Front-End" /><label>Front-End</label>
+        <input type="checkbox" class="tagList" name="tagList" id="Programming" value="Programming" /><label>Programming</label>
+        <input type="checkbox" class="tagList" name="tagList" id="JavaScript" value="JavaScript" /><label>JavaScript</label>
+        <input type="checkbox" class="tagList" name="tagList" id="Browser" value="Browser" /><label>Browser</label>
+        <input type="checkbox" class="tagList" name="tagList" id="DOM" value="DOM" /><label>DOM</label>
+        <input type="checkbox" class="tagList" name="tagList" id="Higher_Order_Functions" value="Higher_Order_Functions" /><label>Higher-Order Functions</label>
+        <input type="checkbox" class="tagList" name="tagList" id="Events" value="Events" /><label>Events</label>
+        <input type="checkbox" class="tagList" name="tagList" id="Functional" value="Functional" /><label>Functional</label>
+    </fieldset>
+
+    <br/><br/>
+
+    <div>
+    </div>
+
+    <script src='glossaryData.js'></script>
+    
+</body>
+</html>
